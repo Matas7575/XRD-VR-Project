@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Anchor
   - muriatic_acid
+  - caustic_soda_raw
+  - muriatic_acid_raw
   layers:
   - Default
   - TransparentFX

@@ -15088,7 +15088,6 @@ GameObject:
   - component: {fileID: 1290846729341142929}
   - component: {fileID: 440390306856904764}
   - component: {fileID: 6594062857206838229}
-  - component: {fileID: 3761108337048617064}
   m_Layer: 0
   m_Name: Erlenmeyer_flask with water (7)
   m_TagString: Untagged
@@ -15165,28 +15164,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3761108337048617064
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5823709699195107294}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 5500921399522267773, guid: 2d6b31bbb0cc4d74f9eb0dcbe73380be, type: 3}
 --- !u!1 &5825111460685091229
 GameObject:
   m_ObjectHideFlags: 0
