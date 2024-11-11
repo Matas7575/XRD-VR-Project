@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Anchor
+  - muriatic_acid
   layers:
   - Default
   - TransparentFX
