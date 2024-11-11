@@ -8,6 +8,7 @@ TagManager:
   - muriatic_acid
   - caustic_soda_raw
   - muriatic_acid_raw
+  - caustic_soda
   layers:
   - Default
   - TransparentFX

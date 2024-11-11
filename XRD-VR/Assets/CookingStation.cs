@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class CookingStation : MonoBehaviour
 {
-    // Reference to the Beaker water prop
     public GameObject beakerWater;
+
+    public Color muriaticAcidColor = Color.green;
+    public Color causticSodaColor = Color.white;
 
     private void Start()
     {
-        // Ensure the Beaker water is initially disabled
         if (beakerWater != null)
         {
             beakerWater.SetActive(false);
@@ -20,18 +21,31 @@ public class CookingStation : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Check if the colliding object has the tag "muriatic_acid"
-        if (other.CompareTag("muriatic_acid"))
+        if (other.CompareTag("muriatic_acid") || other.CompareTag("caustic_soda"))
         {
-            // Enable the Beaker water prop
             if (beakerWater != null)
             {
                 beakerWater.SetActive(true);
+
+                Renderer liquidRenderer = beakerWater.GetComponent<Renderer>();
+                if (liquidRenderer != null)
+                {
+                    if (other.CompareTag("muriatic_acid"))
+                    {
+                        liquidRenderer.material.color = muriaticAcidColor;
+                    }
+                    else if (other.CompareTag("caustic_soda"))
+                    {
+                        liquidRenderer.material.color = causticSodaColor;
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning("No texture found");
+                }
             }
-            else
-            {
-                Debug.LogWarning("Beaker water object not assigned in the inspector.");
-            }
+
+            other.gameObject.SetActive(false);
         }
     }
 }

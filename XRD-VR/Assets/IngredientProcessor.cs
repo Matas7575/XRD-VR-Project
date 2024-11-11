@@ -30,7 +30,6 @@ public class IngredientProcessor : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Check if the colliding object is a raw ingredient
         if (other.CompareTag("muriatic_acid_raw"))
         {
             ApplyIngredient("muriatic_acid", muriaticAcidColor);
