@@ -21,21 +21,23 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Laboratory03_Glass_BaseMap
-  m_Shader: {fileID: -6465566751694194690, guid: e19b5bb6cb8e91e43b1b5d81a069296f, type: 3}
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - _NORMALMAP
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3000
   stringTagMap:
     RenderType: Transparent
   disabledShaderPasses:
-  - DepthOnly
   - MOTIONVECTORS
+  - DepthOnly
+  - SHADOWCASTER
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -65,6 +67,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ClearCoatMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DecalTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -104,7 +110,15 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _NORMAL_MAP:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _NormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OPACITY_MAP:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -128,11 +142,27 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SPECULAR_COLOR_MAP:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SPECULAR_IOR_MAP:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SPECULAR_ROUGHNESS_MAP:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TRANSPARENCY_MAP:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2D:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -150,10 +180,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - Boolean_8A2B8817: 0
     - Normal_Blend: 0.5
     - _AddPrecomputedVelocity: 0
+    - _Alpha: 1
     - _AlphaClip: 0
     - _AlphaToMask: 0
+    - _ApertureSize: 0.7
     - _BASE_COLOR_WEIGHT: 1
     - _BUILTIN_AlphaClip: 0
     - _BUILTIN_Blend: 0
@@ -170,6 +203,7 @@ Material:
     - _Blend: 1
     - _BlendModePreserveSpecular: 1
     - _BlendOp: 0
+    - _Blur: 1.5
     - _BumpScale: 1
     - _CastShadows: 1
     - _ClearCoat: 0
@@ -186,15 +220,23 @@ Material:
     - _DstBlend: 10
     - _DstBlendAlpha: 10
     - _EMISSION_WEIGHT: 1
+    - _EdgeHighlightFalloff: 1.5
     - _EnvironmentReflections: 1
+    - _FeatheringEffect: 0.2
     - _GlossMapScale: 1
     - _Glossiness: 0.95
+    - _GlossinessSource: 0
     - _GlossyReflections: 1
+    - _GradientSize: 2
+    - _Intensity: 1
     - _METALNESS: 0
     - _Metallic: 0.26
     - _Mode: 3
     - _NormalStrength: 0.2
+    - _OPACITY: 1
     - _OcclusionStrength: 1
+    - _Opacity: 1
+    - _OpacityThreshold: 0
     - _Parallax: 0.02
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -203,14 +245,26 @@ Material:
     - _REFLECTIONS_WEIGHT: 1
     - _ReceiveShadows: 1
     - _RimPower: 5
+    - _SPECULAR_IOR: 1.5
+    - _SPECULAR_ROUGHNESS: 0
+    - _Shininess: 0
     - _Smoothness: 0.95
+    - _SmoothnessSource: 0
     - _SmoothnessTextureChannel: 0
+    - _SpecSource: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 1
     - _TRANSPARENCY: 0
     - _UVSec: 0
+    - _UseAoMap: 0
+    - _UseColorMap: 0
+    - _UseEmissiveMap: 0
+    - _UseMetallicMap: 0
+    - _UseNormalMap: 0
+    - _UseOpacityMap: 0
+    - _UseRoughnessMap: 0
     - _WorkflowMode: 1
     - _ZTest: 4
     - _ZWrite: 0
@@ -220,12 +274,18 @@ Material:
     - _BaseColor: {r: 0.9622641, g: 0.9536827, b: 0.80339986, a: 0}
     - _Color: {r: 0.9622641, g: 0.9536827, b: 0.80339986, a: 0}
     - _EMISSION_COLOR: {r: 0, g: 0, b: 0, a: 0}
+    - _EdgeHighlightColor: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _NormalOffset: {r: 0, g: 0, b: 0, a: 0}
     - _NormalTiling: {r: 1, g: 1, b: 0, a: 0}
     - _REFLECTIONS_COLOR: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 0.5803922}
+    - _SPECULAR_COLOR: {r: 1, g: 1, b: 1, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _UvOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _UvTiling: {r: 1, g: 1, b: 0, a: 0}
+    - _VignetteColor: {r: 0, g: 0, b: 0, a: 1}
+    - _VignetteColorBlend: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &790116612437348396
