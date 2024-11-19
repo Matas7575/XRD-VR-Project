@@ -12,6 +12,8 @@ TagManager:
   - hydrogen_chloride_raw
   - hydrogen_chloride
   - CookingLab
+  - Reset Lab
+  - Erlenmeyer flask
   layers:
   - Default
   - TransparentFX
