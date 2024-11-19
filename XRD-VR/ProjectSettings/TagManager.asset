@@ -9,6 +9,9 @@ TagManager:
   - caustic_soda_raw
   - muriatic_acid_raw
   - caustic_soda
+  - hydrogen_chloride_raw
+  - hydrogen_chloride
+  - CookingLab
   layers:
   - Default
   - TransparentFX
@@ -16,8 +19,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Hands
+  - Interactive
   - 
   - 
   - 
