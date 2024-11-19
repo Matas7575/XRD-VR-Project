@@ -355,6 +355,7 @@ GameObject:
   - component: {fileID: 5255699420415964182}
   - component: {fileID: 1582947780572007226}
   - component: {fileID: 3013488614273294533}
+  - component: {fileID: 8462326167627151041}
   m_Layer: 0
   m_Name: pCube89
   m_TagString: Untagged
@@ -430,6 +431,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8462326167627151041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2588408651724882833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 124b4ce961140bd4bb1372b7c87b1638, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beakerWater: {fileID: 7704149652305752694}
+  muriaticAcidColor: {r: 0, g: 1, b: 0, a: 1}
+  causticSodaColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &4406731580537018220
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,6 +727,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beakerWater: {fileID: 7704149652305752694}
+  muriaticAcidColor: {r: 0, g: 1, b: 0, a: 1}
+  causticSodaColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &6092760845618611983
 GameObject:
   m_ObjectHideFlags: 0
