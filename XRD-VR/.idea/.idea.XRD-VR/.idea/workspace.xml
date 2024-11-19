@@ -4,15 +4,6 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b7a0538-d34e-4146-a62f-9a735b129e70" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Jessie.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Jessie.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Jessie.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Jessie.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Jessie.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Jessie.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MenuController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MenuController.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,12 +13,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "git-widget-placeholder": "Title-Screen"
-  }
-}]]></component>
-  <component name="TaskManager">
     <servers />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
