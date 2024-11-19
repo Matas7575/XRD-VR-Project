@@ -3,6 +3,7 @@ using UnityEngine;
 public class CookingStation : MonoBehaviour
 {
     public GameObject beakerWater;
+    public GameObject fireVFX; // Reference to the fire VFX GameObject
 
     public Color muriaticAcidColor = Color.green;
     public Color causticSodaColor = Color.white;
@@ -11,6 +12,7 @@ public class CookingStation : MonoBehaviour
 
     private void Start()
     {
+        // Disable the beaker water object if it exists
         if (beakerWater != null)
         {
             beakerWater.SetActive(false);
@@ -18,6 +20,15 @@ public class CookingStation : MonoBehaviour
         else
         {
             Debug.LogWarning("Beaker water object not assigned in the inspector.");
+        }
+
+        if (fireVFX != null)
+        {
+            fireVFX.SetActive(false);
+        }
+        else
+        {
+            Debug.LogWarning("Fire VFX object not assigned in the inspector.");
         }
     }
 
@@ -45,8 +56,13 @@ public class CookingStation : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogWarning("No texture found");
+                    Debug.LogWarning("No texture found on the beaker water object.");
                 }
+            }
+
+            if (fireVFX != null)
+            {
+                fireVFX.SetActive(true);
             }
 
             other.gameObject.SetActive(false);
