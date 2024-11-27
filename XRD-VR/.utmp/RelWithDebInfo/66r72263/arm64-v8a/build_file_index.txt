@@ -1,0 +1,2 @@
+D:\GIT\XRD-VR-Project\XRD-VR\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt
+D:\GIT\XRD-VR-Project\XRD-VR\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\CMakeLists.txt

@@ -143,6 +143,9 @@ PlayerSettings:
   bundleVersion: 0.1
   preloadedAssets:
   - {fileID: 0}
+  - {fileID: -8196854396901781169, guid: 1a4c68ca72a83449f938d669337cb305, type: 2}
+  - {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
+  - {fileID: -96246732860517567, guid: a9a6963505ddf7f4d886008c6dc86122, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -992,11 +995,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
-  cloudProjectId: 29b89f98-32d6-48f6-aa7f-fd6b2695e154
+  cloudProjectId: 39e04ef3-7437-49a4-9e12-aef6d9691ac2
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: XRD-VR 2024-10-29_14-35-21
-  organizationId: luimadie
+  projectName: XRD-VR
+  organizationId: dragosbonaparte
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

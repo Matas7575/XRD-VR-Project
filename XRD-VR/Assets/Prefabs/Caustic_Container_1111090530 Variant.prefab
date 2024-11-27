@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4355147312480668430
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3857395971568214236}
+  m_Layer: 0
+  m_Name: AttachTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3857395971568214236
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4355147312480668430}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 1, z: 0.00000003774895, w: 0}
+  m_LocalPosition: {x: 0, y: 0.00829, z: 0}
+  m_LocalScale: {x: 0.030808702, y: 0.030808687, z: 0.030808702}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6096094676863014670}
+  m_LocalEulerAnglesHint: {x: -90, y: 180, z: 0}
 --- !u!1001 &2103081801962623283
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8,6 +39,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4782034053555417635, guid: 26eeac8ad6776cd4f9366cbbe95ff79d, type: 3}
+      propertyPath: m_AttachTransform
+      value: 
+      objectReference: {fileID: 3857395971568214236}
     - target: {fileID: 4827252567563279495, guid: 26eeac8ad6776cd4f9366cbbe95ff79d, type: 3}
       propertyPath: m_Name
       value: Caustic_Container_1111090530 Variant
@@ -54,7 +89,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5311441670913639997, guid: 26eeac8ad6776cd4f9366cbbe95ff79d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3857395971568214236}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4827252567563279495, guid: 26eeac8ad6776cd4f9366cbbe95ff79d, type: 3}
       insertIndex: -1
@@ -63,6 +101,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1038111622799437193}
   m_SourcePrefab: {fileID: 100100000, guid: 26eeac8ad6776cd4f9366cbbe95ff79d, type: 3}
+--- !u!4 &6096094676863014670 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5311441670913639997, guid: 26eeac8ad6776cd4f9366cbbe95ff79d, type: 3}
+  m_PrefabInstance: {fileID: 2103081801962623283}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6904719047047351732 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4827252567563279495, guid: 26eeac8ad6776cd4f9366cbbe95ff79d, type: 3}

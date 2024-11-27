@@ -1,11 +1,13 @@
+using System;
 using UnityEngine;
 
 public class IngredientProcessor : MonoBehaviour
 {
-    public GameObject flaskLiquid;
-
-    public Color muriaticAcidColor = Color.green;
-    public Color causticSodaColor = Color.white;
+    [SerializeField] private Renderer liquidRenderer;
+    [SerializeField] private float fillAmountPerSecond = 0.25f;
+    [SerializeField] private float fillValue;
+    private int liquidType = 0;
+    private bool isFilling = false;
 
     private void Start()
     {
@@ -18,45 +20,80 @@ public class IngredientProcessor : MonoBehaviour
         Debug.Log("Collider is present and active.");
     }
 
-    if (flaskLiquid != null)
-    {
-        flaskLiquid.SetActive(false);
+        fillValue = 0.0f;
     }
-    else
+
+    private void FixedUpdate()
     {
-        Debug.LogWarning("Flask liquid object not assigned in the inspector.");
-    }
+        if (isFilling && fillValue < 1.0f && liquidRenderer is not null)
+        {
+            AddIngredient(liquidType == 1 ? "muriatic_acid" : "caustic_soda");
+        }
+        if (fillValue >= 1.0f)
+        {
+            isFilling = false;
+            fillValue = 1.0f;
+            if (liquidRenderer is not null)
+            {
+                liquidRenderer.material.SetFloat("_Fill", fillValue);
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("muriatic_acid_raw"))
         {
-            ApplyIngredient("muriatic_acid", muriaticAcidColor);
+            if(liquidType != 1)
+            {
+                Debug.Log("Liquid type" + liquidType);
+                liquidRenderer.material = Resources.Load<Material>("Materials/Acid");
+                fillValue = liquidRenderer.material.GetFloat("_Fill");
+                fillValue = 0.0f;
+                liquidType = 1;
+            }
+            isFilling = true;
         }
         else if (other.CompareTag("caustic_soda_raw"))
         {
-            ApplyIngredient("caustic_soda", causticSodaColor);
+            if (liquidType != 2)
+            {
+                liquidRenderer.material = Resources.Load<Material>("Materials/CausticSoda");
+                fillValue = liquidRenderer.material.GetFloat("_Fill");
+                fillValue = 0.0f;
+                liquidType = 2;
+            }
+            isFilling = true;
         }
     }
 
-    private void ApplyIngredient(string newTag, Color liquidColor)
+    private void OnTriggerExit(Collider other)
+    {
+        isFilling = false;
+    }
+
+    private void AddIngredient(string newTag)
     {
         gameObject.tag = newTag;
-
-        if (flaskLiquid != null)
+        fillValue += fillAmountPerSecond;
+        liquidRenderer.material.SetFloat("_Fill", fillValue);
+    }
+    
+    public void RemoveIngredient(float amount)
+    {
+        if(fillValue > 0.0f)
         {
-            flaskLiquid.SetActive(true);
-
-            Renderer liquidRenderer = flaskLiquid.GetComponent<Renderer>();
-            if (liquidRenderer != null)
+            fillValue -= amount;
+            if (fillValue < 0.0f)
             {
-                liquidRenderer.material.color = liquidColor;
+                fillValue = 0.0f;
             }
-            else
-            {
-                Debug.LogWarning("issue with texture");
-            }
+            liquidRenderer.material.SetFloat("_Fill", fillValue);
         }
+    }
+    
+    public float GetFillValue()
+    {
+        return fillValue;
     }
 }

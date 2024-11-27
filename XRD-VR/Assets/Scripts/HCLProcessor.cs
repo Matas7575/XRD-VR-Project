@@ -1,35 +1,51 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class HCLProcessor : MonoBehaviour
 {
-
-     public GameObject hydrogenChloride;
-
-    public string CurrentIngredient { get; private set; }
-
-    private void Start()
-    {
-        if (hydrogenChloride != null)
-        {
-            hydrogenChloride.SetActive(false);
-        }
-        else
-        {
-            Debug.LogWarning("Hydrogen container object not assigned in the inspector.");
-        }
-    }
+    private GameObject hydrogenChloride;
+    private bool isInsideCollider;
+    private XRGrabInteractable grabInteractable;
+    private Rigidbody rb;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("hydrogen_chloride_raw"))
         {
-            if (hydrogenChloride != null)
+            hydrogenChloride = other.gameObject;
+            rb = hydrogenChloride.GetComponent<Rigidbody>();
+            grabInteractable = hydrogenChloride.GetComponent<XRGrabInteractable>();
+            if (grabInteractable != null)
             {
-                hydrogenChloride.SetActive(true);
-                        CurrentIngredient = "hydrogen_chloride";
+                grabInteractable.selectExited.AddListener(OnGrabReleased);
             }
-
-            other.gameObject.SetActive(false);
+            isInsideCollider = true;
+            rb.isKinematic = true;
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("hydrogen_chloride_raw"))
+        {
+            isInsideCollider = false;
+        }
+    }
+
+    private void OnGrabReleased(SelectExitEventArgs args)
+    {
+        if (hydrogenChloride != null && isInsideCollider)
+        {
+            hydrogenChloride.transform.position = transform.position;
+            hydrogenChloride.transform.rotation = transform.rotation;
+        }
+        if (!isInsideCollider)
+            rb.isKinematic = false;
+    }
+    
+    public bool IsInsideCollider()
+    {
+        return isInsideCollider;
     }
 }

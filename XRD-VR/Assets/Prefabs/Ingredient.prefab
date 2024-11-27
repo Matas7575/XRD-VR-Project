@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 2121199868972109834}
   - component: {fileID: 3304898312980125939}
   - component: {fileID: 4677916027750248973}
-  - component: {fileID: 8425872865538853012}
-  - component: {fileID: 8656971896385357242}
   - component: {fileID: 4261701098440015714}
+  - component: {fileID: 2648501873659335347}
+  - component: {fileID: 8811458060552619545}
   m_Layer: 0
   m_Name: Ingredient
   m_TagString: Untagged
@@ -105,9 +105,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 654809bad38aa12489b2d283fd53c650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flaskLiquid: {fileID: 5976663375469947504}
-  muriaticAcidColor: {r: 0, g: 1, b: 0, a: 1}
-  causticSodaColor: {r: 1, g: 1, b: 1, a: 1}
+  liquidRenderer: {fileID: 0}
+  fillAmountPerSecond: 0.25
+  fillValue: 0
 --- !u!54 &3304898312980125939
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -134,7 +134,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &4677916027750248973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,48 +257,6 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 0
---- !u!65 &8425872865538853012
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3905966812052382000}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.10962669, y: 0.1286766, z: 0.10367839}
-  m_Center: {x: -0.000000039115545, y: 0.063639134, z: 0}
---- !u!65 &8656971896385357242
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3905966812052382000}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.10962669, y: 0.1286766, z: 0.10367839}
-  m_Center: {x: -0.000000039115545, y: 0.063639134, z: 0}
 --- !u!114 &4261701098440015714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,6 +280,48 @@ MonoBehaviour:
   m_MinimumScaleRatio: 0.25
   m_MaximumScaleRatio: 2
   m_ScaleMultiplier: 0.25
+--- !u!65 &2648501873659335347
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3905966812052382000}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.10962669, y: 0.1286766, z: 0.10367839}
+  m_Center: {x: -0.000000039115545, y: 0.063639134, z: 0}
+--- !u!65 &8811458060552619545
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3905966812052382000}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.10962669, y: 0.1286766, z: 0.10367839}
+  m_Center: {x: -0.000000039115545, y: 0.063639134, z: 0}
 --- !u!1001 &8441780205193399177
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -378,20 +378,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Beaker liquid
       objectReference: {fileID: 0}
-    - target: {fileID: 9192562976067721368, guid: a572e70971ff81f4992e8360d5356395, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: d987ec024d9a90d4c8deb0ba94e48b99, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a572e70971ff81f4992e8360d5356395, type: 3}
---- !u!1 &5976663375469947504 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2870593904137413113, guid: a572e70971ff81f4992e8360d5356395, type: 3}
-  m_PrefabInstance: {fileID: 8441780205193399177}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7267476212218131553 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1296044121322356712, guid: a572e70971ff81f4992e8360d5356395, type: 3}

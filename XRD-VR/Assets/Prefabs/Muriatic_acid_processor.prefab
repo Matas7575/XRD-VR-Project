@@ -172,6 +172,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1855429895682420980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5629246944016241088}
+  m_Layer: 0
+  m_Name: BeakerLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5629246944016241088
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855429895682420980}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0107, y: 0.2176, z: -0.0046}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2846330457559814872}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2049472484294455032
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,7 +386,6 @@ GameObject:
   - component: {fileID: 5255699420415964182}
   - component: {fileID: 1582947780572007226}
   - component: {fileID: 3013488614273294533}
-  - component: {fileID: 8462326167627151041}
   m_Layer: 0
   m_Name: pCube89
   m_TagString: Untagged
@@ -431,21 +461,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8462326167627151041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2588408651724882833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 124b4ce961140bd4bb1372b7c87b1638, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  beakerWater: {fileID: 7704149652305752694}
-  muriaticAcidColor: {r: 0, g: 1, b: 0, a: 1}
-  causticSodaColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &4406731580537018220
 GameObject:
   m_ObjectHideFlags: 0
@@ -690,6 +705,7 @@ Transform:
   - {fileID: 6804970198676728020}
   - {fileID: 6150937269557749402}
   - {fileID: 8035082965165851561}
+  - {fileID: 5629246944016241088}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1300548763907064736
@@ -726,9 +742,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124b4ce961140bd4bb1372b7c87b1638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beakerWater: {fileID: 7704149652305752694}
-  muriaticAcidColor: {r: 0, g: 1, b: 0, a: 1}
-  causticSodaColor: {r: 1, g: 1, b: 1, a: 1}
+  beakerLocation: {fileID: 5629246944016241088}
+  fireVFX: {fileID: 0}
 --- !u!1 &6092760845618611983
 GameObject:
   m_ObjectHideFlags: 0

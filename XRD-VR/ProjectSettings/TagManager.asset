@@ -12,6 +12,19 @@ TagManager:
   - hydrogen_chloride_raw
   - hydrogen_chloride
   - CookingLab
+  - Reset lab
+  - Erlenmeyer flasks
+  - Flask with water
+  - Knob-1
+  - Knob-2
+  - Tray
+  - Beaker-1
+  - Beaker-2
+  - WinningPanel
+  - Ion Gas
+  - ControllerRight
+  - ControllerLeft
+  - Try again
   layers:
   - Default
   - TransparentFX
@@ -21,7 +34,7 @@ TagManager:
   - UI
   - Hands
   - Interactive
-  - 
+  - VRUI
   - 
   - 
   - 
